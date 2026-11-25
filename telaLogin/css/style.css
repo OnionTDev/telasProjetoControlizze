@@ -1,0 +1,314 @@
+@import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Arimo", sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, 
+                    rgba(15, 11, 23, 1) 0%, 
+                    rgba(15, 11, 23, 0.92) 35%, 
+                    rgba(15, 11, 23, 0.4) 100%), 
+                url('../assets/img/fundo.png') no-repeat;
+    
+    background-position: center; 
+    background-size: cover;
+    
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    overflow: hidden;
+}
+
+
+/* Esta escondendo elementos exclusivos para leitores de tela (Acessibilidade) */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+/* 2. LAYOUT PRINCIPAL */
+
+.main-container {
+    display: flex;
+    width: 100%;
+    max-width: 1100px;
+    justify-content: space-between;
+    align-items: center;
+    gap: 80px;
+}
+
+/* 3. SEÇÃO DA ESQUERDA */
+
+.info-section {
+    flex: 1;
+    max-width: 550px;
+}
+
+.logo {
+    display: block;
+    margin-bottom: 20px;
+}
+
+.logo img {
+    width: 500px;
+    height: auto;
+    display: block;
+}
+
+.info-section h2 {
+    font-size: 2rem;
+    font-weight: 400;
+    line-height: 1.4;
+    margin-bottom: 1.5rem;
+    color: #CDD6DF;
+}
+
+.divider {
+    width: 60px;
+    border: none;
+    height: 2px;
+    background-color: #ffffff;
+    margin-bottom: 20px;
+}
+
+/* 4. SEÇÃO DA DIREITA */
+
+.form-section {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.card-login {
+    background-color: #0F111A;
+    border: 1px solid #4C1D95;
+    border-radius: 12px;
+    padding: 25px 35px;
+    width: 100%;
+    max-width: 380px;
+    text-align: center;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+/* Cabeçalho do Card */
+
+.form-header {
+    margin-bottom: 18px;
+}
+
+.header-icon {
+    width: 45px;
+    height: auto;
+    margin-bottom: 8px;
+    object-fit: contain;
+}
+
+.card-login h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 4px;
+    color: #ffffff;
+}
+
+.subtitle {
+    font-size: 0.85rem;
+    color: #a1a1aa;
+}
+
+/* Formulário e Inputs */
+
+.form-fields {
+    border: none;
+    text-align: left;
+}
+
+.input-group {
+    margin-bottom: 14px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 0.85rem;
+    color: #A78BFA;
+    margin-bottom: 6px;
+    font-weight: 500;
+}
+
+.input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-icon {
+    position: absolute;
+    left: 14px;
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+    pointer-events: none;
+}
+
+.input-wrapper input {
+    width: 100%;
+    padding: 10px 40px 10px 44px;
+    background-color: rgba(30, 30, 46, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 6px;
+    color: #ffffff;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.2s, background-color 0.2s;
+}
+
+.input-wrapper input:focus {
+    border-color: #7c4dff;
+    background-color: rgba(30, 30, 46, 0.9);
+}
+
+.input-wrapper input::placeholder {
+    color: #82909B;
+}
+
+.btn-toggle-password {
+    position: absolute;
+    right: 12px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+.eye-img {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+    transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+.btn-toggle-password::after {
+    content: '';
+    position: absolute;
+    width: 22px;
+    height: 2px;
+    background-color: #a1a1aa;
+    border-radius: 2px;
+    transform: rotate(-45deg) scaleX(0); /* Começa invisível (escala 0) */
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: none;
+}
+
+.btn-toggle-password.is-visible::after {
+    transform: rotate(-45deg) scaleX(1);
+}
+
+.btn-toggle-password.is-visible .eye-img {
+    opacity: 0.6;
+}
+
+.btn-toggle-password.is-blinking .eye-img {
+    transform: scaleY(0.1);
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 12px;
+    background-color: #6D28D9;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 8px;
+    margin-bottom: 12px;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.btn-submit:hover {
+    background-color: #6200ea;
+}
+
+.btn-submit:active {
+    transform: scale(0.98);
+}
+
+/* Link Esqueci minha senha unificado */
+.forgot-password {
+    display: inline-block;
+    font-size: 0.9rem;
+    color: #38BDF8;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.forgot-password:hover {
+    color: #7dd3fc;
+    text-decoration: underline;
+}
+
+/* Linha divisora "ou" */
+.or-divider {
+    margin: 18px 0;
+    font-size: 0.85rem;
+    color: #71717a;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.or-divider::before,
+.or-divider::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.or-divider:not(:empty)::before {
+    margin-right: 0.75em;
+}
+
+.or-divider:not(:empty)::after {
+    margin-left: 0.75em;
+}
+
+.btn-register-outline {
+    display: block;
+    width: 100%;
+    padding: 11px;
+    background-color: transparent;
+    color: #A78BFA;
+    border: 1px solid #7c4dff;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.btn-register-outline:hover {
+    background-color: rgba(98, 0, 234, 0.05);
+    color: #a1a1aa;
+    border-color: #7c4dff;
+}
+
+.btn-register-outline:active {
+    transform: scale(0.98);
+}

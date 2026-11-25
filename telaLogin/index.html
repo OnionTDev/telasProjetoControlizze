@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="./css/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Controlizze | Login</title>
+</head>
+<body>
+
+  <main class="main-container">
+        
+        <section class="info-section" aria-labelledby="info-title">
+            <header class="logo">
+                <img src="./assets/icons/Logotipo.svg" alt="Logotipo do site Controlizze">
+            </header>
+            
+            <hr class="divider">
+            <h2 id="info-title">Organize seus gastos, planeje seu futuro e construa seus objetivos.</h2>
+        </section>
+
+        <section class="form-section" aria-labelledby="form-title">
+            <article class="card-login">
+                
+                <header class="form-header">
+                    <img src="./assets/icons/carteira.svg" alt="" aria-hidden="true" class="header-icon">
+                    <h3 id="form-title">Bem vindo(a)!</h3>
+                    <p class="subtitle">Entre para acessar sua conta</p>
+                </header>
+
+                <form action="#" method="POST">
+                    <fieldset class="form-fields">
+                        <!-- CORREÇÃO 1: Texto ajustado para Login e tag </div> solta removida -->
+                        <legend class="sr-only">Dados de Login</legend>
+
+                        <div class="input-group">
+                            <label for="email">E-mail</label>
+                            <div class="input-wrapper">
+                                <img src="./assets/icons/mail.svg" alt="" aria-hidden="true" class="input-icon">
+                                <input type="email" id="email" name="email" placeholder="E-mail" required autocomplete="email">
+                            </div>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="password">Senha</label>
+                            <div class="input-wrapper">
+                                <img src="./assets/icons/senha.svg" alt="" aria-hidden="true" class="input-icon">
+                                <!-- CORREÇÃO 2: autocomplete ajustado para senha atual -->
+                                <input type="password" id="password" name="password" placeholder="Senha" required autocomplete="current-password">
+                                <button type="button" class="btn-toggle-password" aria-label="Mostrar ou ocultar senha">
+                                    <img src="./assets/icons/olho.svg" alt="" aria-hidden="true" class="eye-img">
+                                </button>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <button type="submit" class="btn-submit">Entrar</button>
+                    <a class="forgot-password" href="#">Esqueci minha Senha</a>
+                </form>
+
+                <footer class="form-footer">
+                    <div class="or-divider" role="separator">ou</div>
+                    <a href="/telaCadastro/index.html" class="btn-register-outline">Criar Conta</a>
+                </footer>
+
+            </article>
+        </section>
+
+  </main>
+
+  <script src="./js/script.js"></script>
+</body>
+</html>
